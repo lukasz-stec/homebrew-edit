@@ -8,13 +8,15 @@ cask "edit" do
   desc "Fast native text editor with IntelliJ-style editing"
   homepage "https://github.com/lukasz-stec/edit"
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "Edit.app"
 
   # The app isn't notarized: clear the quarantine flag so Gatekeeper lets it open.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Edit.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:         ["-dr", "com.apple.quarantine", "{{appdir}}/Edit.app"],
+        must_succeed: false
   end
 
   zap trash: "~/Library/Application Support/edit"
