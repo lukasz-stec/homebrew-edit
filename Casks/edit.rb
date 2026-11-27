@@ -1,7 +1,7 @@
 # Updated automatically by the release workflow of https://github.com/lukasz-stec/edit
 cask "edit" do
-  version "0.1.18"
-  sha256 "d5c14c8cc3892c69ecc036be36e21355fcccffd3e489b57d95eb544a7ce7f76c"
+  version "0.1.19"
+  sha256 "922e765d8c2e8ccc0a030163f160aee0aff0977e79aa6c95ea0fe54d7731eb0a"
 
   url "https://github.com/lukasz-stec/edit/releases/download/v#{version}/edit-macos-universal.zip"
   name "Edit"
